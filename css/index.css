@@ -1,0 +1,338 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: poppins;
+  /* border: 2px solid red; */
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+}
+
+.watch-outline-1{
+    border: 20px solid black;
+    border-radius: 50%;
+}
+
+.watch-outline-2{
+    border: 10px solid rgba(48, 48, 48, 0.473);
+    border-radius: 50%;
+    box-shadow: 16px 16px 16px black;
+}
+
+.watch-container{
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    background: rgba(128, 128, 128, 0.293);
+    position: relative;
+}
+
+.watch-container>*{
+    position: absolute;
+}
+
+/* inner watch */
+
+
+.l12{
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+.l3{
+    right: 0%;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+.l6{
+    left: 50%;
+    bottom: 0%;
+    transform: translate(50%, 0);
+}
+.l9{
+    left: 0%;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+
+.underline-container{
+    width: 500px;
+    height: 500px;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+}
+
+.underline {
+    width: 5px;
+    height: 1.75rem;
+    background-color: black;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    position: absolute;
+}
+
+.ul1{
+    transform: rotate(30deg);
+}
+.ul2{
+    transform: rotate(60deg);
+}
+.ul3{
+    transform: rotate(120deg);
+}
+.ul4{
+    transform: rotate(150deg);
+}
+.ul5{
+    transform: rotate(210deg);
+}
+.ul6{
+    transform: rotate(240deg);
+}
+.ul7{
+    transform: rotate(300deg);
+}
+.ul8{
+    transform: rotate(330deg);
+}
+
+.center-point{
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    z-index: 0;
+    display: grid;
+    place-items: center;
+    background-color: rgba(0, 0, 0, 0.615);
+    border: 5px solid black;
+}
+.center-center{
+    width: 20px;
+    height: 20px;
+    background-color: black;
+    border-radius: 50%;
+}
+
+/* moving hand--------------------------------------- */
+
+.sec-hand{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    animation: move 60s linear 0s infinite;
+}
+
+@keyframes move {
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+.sec-hand .hand-part{
+    position: absolute;
+    left: 50%;
+    top: 40px;
+    transform: translateX(-50%);
+    width: 5px;
+    height: 210px;
+    background-color: rgb(255, 0, 0);
+    clip-path: polygon(50% 0,100% 70%,50% 100%, 0 70%);
+    z-index: 2;
+}
+
+.min-hand{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    animation: move 3600s linear 0s infinite;
+}
+
+.min-hand .hand-part{
+    position: absolute;
+    left: 50%;
+    top: 60px;
+    transform: translateX(-50%);
+    width: 15px;
+    height: 190px;
+    background-color: rgb(56, 56, 56);
+    clip-path: polygon(50% 0,100% 50%,50% 100%, 0 50%);
+    z-index: 3;
+}
+
+.hour-hand{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    animation: move calc(3600s * 60) linear 0s infinite;
+}
+
+.hour-hand .hand-part{
+    position: absolute;
+    left: 50%;
+    top: 110px;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 150px;
+    background-color: black;
+    clip-path: polygon(50% 0,100% 50%,50% 100%, 0 50%);
+    z-index: 4;
+}
+
+/* change button open--------------------------------*/
+
+
+.button-container{
+    display: flex;
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-button{
+    font-size: 1.5em;
+    padding: 8px 16px;
+    background-color: chocolate;
+    color: white;
+    border: transparent;
+    box-shadow: 4px 4px 8px black;
+    border-radius: 8px;
+    transition: all .2s ease;
+    cursor: pointer;
+}
+
+.login-button:hover{
+    transform: scale(1.1);
+    background-color: rgb(243, 124, 40);
+}
+
+.login-button:active{
+    background-color: black;
+}
+.login-button1{
+    font-size: 1.5em;
+    padding: 8px 16px;
+    background-color: chocolate;
+    color: white;
+    border: transparent;
+    box-shadow: 4px 4px 8px black;
+    border-radius: 8px;
+    transition: all .2s ease;
+    cursor: pointer;
+}
+
+.login-button1:hover{
+    transform: scale(1.1);
+    background-color: rgb(243, 124, 40);
+}
+
+.login-button1:active{
+    background-color: black;
+}
+
+/* login container */
+
+.login-container {
+    display: none;
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    place-items: center;
+    backdrop-filter: blur(12px);
+}
+
+.login-container .card{
+    position: relative;
+    width: 400px;
+    height: 400px;
+    background-color: rgba(255, 255, 255, 0.153);
+    border-radius: 32px;
+    box-shadow: 16px 16px 16px #00000071;
+    padding: 64px 32px;
+    z-index: 9;
+}
+
+.card.active{
+    animation: active .2s 1 alternate linear;
+}
+
+@keyframes active {
+    from{
+        
+        transform: matrix(.1, 0, 0, .1, 580, -280);
+        
+    }
+    to{
+        
+        transform: matrix(1, 0, 0, 1, 0, 0);
+        
+    }
+}
+
+.card h1{
+    font-size: 3em;
+    margin-bottom: 32px;
+}
+
+.card label{
+    padding-left: 16px;
+    margin-top: 64px;
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+input{
+    padding: 4px 10px;
+    margin: 4px 8px;
+    font-size: 1.2em;
+    background-color: skyblue;
+    border: none;
+    border-bottom: 1px solid black;
+    outline: none;
+    border-radius: 8px;
+    width: 90%;
+}
+
+input[type="submit"] {
+    background-color: green;
+}
+
+
+.card .close{
+    position: relative;
+    display: inline-block;
+    padding: 4px 12px;
+    font-size: 1.2em;
+    font-weight: 700;
+    color: black;
+    background-color: red;
+    border-radius: 50%;
+    left: 20vw;
+    bottom: 5vh;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.629);
+    transition: all .2s ease;
+    cursor: pointer;
+}
+
+.card .close:hover{
+    transform: scale(1.1);
+    background-color: rgb(243, 124, 40);
+}
+
+.card .close:active{
+    background-color: black;
+}
